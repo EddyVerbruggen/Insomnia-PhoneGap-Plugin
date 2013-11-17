@@ -27,7 +27,6 @@ Insomnia is compatible with [Cordova Plugman](https://github.com/apache/cordova-
 
 ```
 $ phonegap local plugin add https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git#phonegap-2.x
-
 ```
 or
 ```
@@ -48,7 +47,7 @@ Then reference `Insomnia.js` in `index.html`, after `cordova.js`/`phonegap.js`. 
 ```xml
 <!-- for iOS -->
 <feature name="Insomnia">
-	<param name="ios-package" value="Insomnia" />
+  <param name="ios-package" value="Insomnia" />
 </feature>
 ```
 ```xml
@@ -95,9 +94,12 @@ or to use this exact version:
 
 ## 3. Usage
 ```html
-  <button onclick="window.plugins.insomnia.keepAwake()">keep awake</button>
-  <button onclick="window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
+<button onclick="window.plugins.insomnia.keepAwake()">keep awake</button>
+<button onclick="window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
 ```
+An optional successCallback (first argument) will be triggered if the functions succeed. Even calling `keepAwake` twice will fire the successCallback, because the app will respond as expected (being kept awake).
+
+An optional errorCallback (second argument) will only be triggered if something fatal happened, preventing the plugin to work as expected.
 
 ## 4. CREDITS ##
 
