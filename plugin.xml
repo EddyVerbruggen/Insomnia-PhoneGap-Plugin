@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="nl.x-services.plugins.insomnia"
+        version="1.0">
+
+  <name>Insomnia (prevent screen sleep)</name>
+
+  <description>
+    Prevent the screen of the mobile device from falling asleep.
+    This version is for PhoneGap 2.x.
+  </description>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version="2.5.0"/>
+    <engine name="cordova" version="2.7.0"/>
+    <engine name="cordova" version="2.9.0"/>
+  </engines>
+
+
+  <asset src="www/Insomnia.js" target="js/plugins/Insomnia.js"/>
+
+  <!-- ios -->
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="plugins">
+      <plugin name="Insomnia" value="Insomnia"/>
+    </config-file>
+
+    <header-file src="src/ios/Insomnia.h"/>
+    <source-file src="src/ios/Insomnia.m"/>
+  </platform>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="plugins">
+      <plugin name="Insomnia" value="nl.xservices.plugins.Insomnia"/>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name=" android.permission.WAKE_LOCK"/>
+    </config-file>
+
+    <source-file src="src/android/nl/xservices/plugins/Insomnia.java" target-dir="src/nl/xservices/plugins"/>
+  </platform>
+
+</plugin>
