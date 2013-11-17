@@ -13,16 +13,26 @@ public class Insomnia extends CordovaPlugin {
   private static final String ACTION_ALLOW_SLEEP_AGAIN = "allowSleepAgain";
 
   @Override
-  public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     try {
       if (ACTION_KEEP_AWAKE.equals(action)) {
-        cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+        cordova.getActivity().runOnUiThread(
+            new Runnable() {
+              public void run() {
+                cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+              }
+            });
         return true;
 
       } else if (ACTION_ALLOW_SLEEP_AGAIN.equals(action)) {
-        cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+        cordova.getActivity().runOnUiThread(
+            new Runnable() {
+              public void run() {
+                cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+              }
+            });
         return true;
 
       } else {
