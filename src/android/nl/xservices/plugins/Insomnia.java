@@ -1,5 +1,6 @@
 package nl.xservices.plugins;
 
+import android.view.WindowManager;
 import org.apache.cordova.api.CallbackContext;
 import org.apache.cordova.api.CordovaPlugin;
 import org.apache.cordova.api.PluginResult;
@@ -11,24 +12,16 @@ public class Insomnia extends CordovaPlugin {
   private static final String ACTION_KEEP_AWAKE = "keepAwake";
   private static final String ACTION_ALLOW_SLEEP_AGAIN = "allowSleepAgain";
 
-  PowerManager.WakeLock wl;
-
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     try {
       if (ACTION_KEEP_AWAKE.equals(action)) {
-        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        wl = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "Game TV"); // TODO add ON_AFTER_RELEASE
-        wl.acquire();
-
+        cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
         return true;
 
       } else if (ACTION_ALLOW_SLEEP_AGAIN.equals(action)) {
-        if (wl != null) {
-          wl.release();
-        }
-
+        cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
         return true;
 
