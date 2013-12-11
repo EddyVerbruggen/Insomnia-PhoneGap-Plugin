@@ -11,6 +11,8 @@ by [Eddy Verbruggen](http://www.x-services.nl)
 4. [Credits](https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin#4-credits)
 5. [License](https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin#5-license)
 
+This is for PhoneGap 3.x, [here is the 2.x version](https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin/tree/phonegap-2.x)
+
 ## 1. Description
 
 Prevent the screen of the mobile device from falling asleep.
