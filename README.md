@@ -75,22 +75,18 @@ Android: Copy `Insomnia.java` to `platforms/android/src/nl/xservices/plugins` (c
 
 ### PhoneGap Build
 
-Insomnia works with PhoneGap build too. You can implement the plugin with these simple steps.
-
-1\. Add the following xml to your `config.xml` to always use the latest version of this plugin:
+Insomnia will soon work with PhoneGap build too!
+Just add the following xml to your `config.xml` to always use the latest version of this plugin:
 ```xml
 <gap:plugin name="nl.x-services.plugins.insomnia" />
 ```
 or to use this exact version:
 ```xml
-<gap:plugin name="nl.x-services.plugins.insomnia" version="2.0" />
+<gap:plugin name="nl.x-services.plugins.insomnia" version="3.0" />
 ```
 
-2\. Reference the JavaScript code in your `index.html`:
-```html
-<!-- below <script src="phonegap.js"></script> -->
-<script src="js/plugins/Insomnia.js"></script>
-```
+The required javascript file is brought in automatically. There is no need to change or add anything in your html.
+
 
 ## 3. Usage
 ```html

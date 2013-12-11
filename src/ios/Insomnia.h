@@ -2,8 +2,8 @@
 
 @interface Insomnia :CDVPlugin
 
-- (void) keepAwake:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void) keepAwake:(CDVInvokedUrlCommand*)command;
 
-- (void) allowSleepAgain:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void) allowSleepAgain:(CDVInvokedUrlCommand*)command;
 
 @end
