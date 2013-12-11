@@ -24,8 +24,10 @@
   <!-- ios -->
   <platform name="ios">
 
-    <config-file target="config.xml" parent="plugins">
-      <plugin name="Insomnia" value="Insomnia"/>
+    <config-file target="config.xml" parent="/*">
+      <feature name="Insomnia">
+        <param name="ios-package" value="Insomnia"/>
+      </feature>
     </config-file>
 
     <header-file src="src/ios/Insomnia.h"/>
@@ -35,8 +37,10 @@
   <!-- android -->
   <platform name="android">
 
-    <config-file target="res/xml/config.xml" parent="plugins">
-      <plugin name="Insomnia" value="nl.xservices.plugins.Insomnia"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Insomnia">
+        <param name="android-package" value="nl.xservices.plugins.Insomnia" />
+      </feature>
     </config-file>
 
     <source-file src="src/android/nl/xservices/plugins/Insomnia.java" target-dir="src/nl/xservices/plugins"/>
