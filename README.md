@@ -38,10 +38,8 @@ run this command afterwards:
 ```
 $ cordova prepare
 ```
-Then reference `Insomnia.js` in `index.html`, after `cordova.js`/`phonegap.js`. Mind the path:
-```html
-<script type="text/javascript" src="js/plugins/Insomnia.js"></script>
-```
+
+The javascript bridge is brought in automatically, so no need to reference Insomnia.js from your html.
 
 ### Manually
 
