@@ -17,7 +17,7 @@
     <engine name="cordova" version=">=3.0.0"/>
   </engines>
 
-  <js-module src="www/Insomnia.js" name="WebViewColor">
+  <js-module src="www/Insomnia.js" name="Insomnia">
     <clobbers target="window.plugins.insomnia" />
   </js-module>
 
