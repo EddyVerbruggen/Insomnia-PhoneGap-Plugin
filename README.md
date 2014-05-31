@@ -51,15 +51,18 @@ The javascript bridge is brought in automatically, so no need to reference Insom
   <param name="ios-package" value="Insomnia" />
 </feature>
 ```
+
 ```xml
-<!-- for Android as plugin (deprecated) -->
-<plugin name="Insomnia" value="nl.xservices.plugins.Insomnia"/>
+<!-- for Android -->
+<feature name="Insomnia">
+  <param name="android-package" value="nl.xservices.plugins.Insomnia" />
+</feature>
 ```
 
 ```xml
-<!-- for Android as feature -->
+<!-- for wp8 -->
 <feature name="Insomnia">
-  <param name="android-package" value="nl.xservices.plugins.Insomnia" />
+  <param name="wp-package" value="Insomnia" />
 </feature>
 ```
 
@@ -74,16 +77,18 @@ iOS: Copy `Insomnia.h` and `Insomnia.h` to `platforms/ios/<ProjectName>/Plugins`
 
 Android: Copy `Insomnia.java` to `platforms/android/src/nl/xservices/plugins` (create the folders)
 
+wp8: Copy `Insomnia.cs` to `platforms/wp8/Plugins/nl.x-services.plugins.insomnia` (create the folders)
+
 ### PhoneGap Build
 
-Insomnia works with PhoneGap build too: https://build.phonegap.com/plugins/355
+Insomnia works with PhoneGap build too, look for Insomnia here: https://build.phonegap.com/plugins/
 Just add the following xml to your `config.xml` to always use the latest version of this plugin:
 ```xml
 <gap:plugin name="nl.x-services.plugins.insomnia" />
 ```
 or to use this exact version:
 ```xml
-<gap:plugin name="nl.x-services.plugins.insomnia" version="3.0" />
+<gap:plugin name="nl.x-services.plugins.insomnia" version="4.0.0" />
 ```
 
 The required javascript file is brought in automatically. There is no need to change or add anything in your html.
@@ -101,8 +106,12 @@ An optional errorCallback (second argument) will only be triggered if something 
 ## 4. CREDITS ##
 
 This plugin was enhanced for Plugman / PhoneGap Build by [Eddy Verbruggen](http://www.x-services.nl).
+
 The Android code was entirely created by the author.
+
 The iOS code was heavily inspired by [Wolfgang Koller](https://github.com/simplec-dev/powermanagement).
+
+Many thanks to [Jesse MacFadyen](https://github.com/purplecabbage) for implementing the wp8 version!
 
 ## 5. License
 

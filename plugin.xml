@@ -2,13 +2,12 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.insomnia"
-        version="3.0">
+        version="4.0.0">
 
   <name>Insomnia (prevent screen sleep)</name>
 
   <description>
     Prevent the screen of the mobile device from falling asleep.
-    This version is for PhoneGap 3.x.
   </description>
 
   <license>MIT</license>
