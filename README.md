@@ -21,6 +21,7 @@ Prevent the screen of the mobile device from falling asleep.
 * After making your app practically a zombie, you can allow it to sleep again by calling `allowSleepAgain`.
 * Works on Android, probably every version you'd care about.
 * Works on iOS, probably every version you'd care about.
+* Works on wp8.
 
 ## 2. Installation
 
