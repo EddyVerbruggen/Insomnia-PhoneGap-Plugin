@@ -92,8 +92,8 @@ or to use this exact version:
 ```
 
 The plugin's  javascript file is brought in automatically. Make sure though you include a reference to cordova.js in your index.html's head:
-```js
-<script src="cordova.js"></script>
+```html
+<script type="text/javascript" src="cordova.js"></script>
 ```
 
 ## 3. Usage
