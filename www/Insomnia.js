@@ -1,21 +1,26 @@
-function Insomnia() {
-}
+var exec = require('cordova/exec');
+
+// helper functions
+var callNative = function (successCallback, errorCallback, name) {
+  exec(handleUndefined(successCallback), handleUndefined(errorCallback), 'Insomnia', name, []);
+};
+
+var handleUndefined = function (callback) {
+  return callback || defaultHandler;
+};
+
+var defaultHandler = function (msg) {};
+
+
+// interface object
+var Insomnia = function () {};
 
 Insomnia.prototype.keepAwake = function (successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "Insomnia", "keepAwake", []);
+  callNative(successCallback, errorCallback, 'keepAwake');
 };
 
 Insomnia.prototype.allowSleepAgain = function (successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "Insomnia", "allowSleepAgain", []);
+  callNative(successCallback, errorCallback, 'allowSleepAgain');
 };
 
-Insomnia.install = function () {
-  if (!window.plugins) {
-    window.plugins = {};
-  }
-
-  window.plugins.insomnia = new Insomnia();
-  return window.plugins.insomnia;
-};
-
-cordova.addConstructor(Insomnia.install);
+module.exports = new Insomnia();
