@@ -62,5 +62,12 @@
       <runs />
     </js-module>
   </platform>
+  
+  <!-- windows -->
+  <platform name="windows">
+    <js-module src="src/windows/InsomniaProxy.js" name="InsomniaProxy">
+      <merges target="" />
+    </js-module>
+  </platform>  
 
 </plugin>
