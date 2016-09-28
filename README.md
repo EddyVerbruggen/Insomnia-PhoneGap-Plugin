@@ -107,10 +107,9 @@ An optional errorCallback (second argument) will only be triggered if something 
 
 ### Quirks
 [In this issue](#29) it was reported that on iOS the app would fall asleep after the Camera has been used,
-even if you previously called `keepAwake`.
+even if you previously called `keepAwake`. A similar [issue on Android](#30) where the photo library was accessed during app usage.
 
-So to make sure your app honors `keepAwake` you have to re-run that method after the (any) Camera plugin
-gives control back to your app.
+So to make sure your app honors `keepAwake` you have to re-run that method after these kinds of 'external UI' thingies give control back to your app.
 
 ## 4. CREDITS ##
 
