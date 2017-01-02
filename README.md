@@ -42,6 +42,8 @@ $ cordova prepare
 
 The javascript bridge is brought in automatically, so no need to reference Insomnia.js from your html.
 
+You can also get this plugin [from NPM](https://www.npmjs.com/package/cordova-plugin-insomnia).
+
 ### Manually
 
 1\. Add the following xml to your `config.xml` in the root directory of your `www` folder:
